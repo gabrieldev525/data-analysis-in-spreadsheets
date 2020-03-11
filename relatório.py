@@ -40,7 +40,7 @@ with open('Base de Onibus2.csv', 'r') as file:
 
 
 """
-    Relatório Educação: Informar nome, data de nascimento e id dos cidadãos de XPTO 
+    Relatório Educação: Informar nome, data de nascimento e id dos cidadãos de XPTO
     que frequentaram a escola, menos os cidadãos que tiveram dengue
 """
 peoples_with_dengue = list(map(lambda x : x[1], dengue_list))
