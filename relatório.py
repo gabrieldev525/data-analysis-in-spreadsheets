@@ -1,5 +1,7 @@
 import csv
 
+from utils import match_people
+
 # utils functions
 def header(title):
     print('=' * len(title))
@@ -43,9 +45,18 @@ with open('Base de Onibus2.csv', 'r') as file:
     Relatório Educação: Informar nome, data de nascimento e id dos cidadãos de XPTO
     que frequentaram a escola, menos os cidadãos que tiveram dengue
 """
+without_dengue = [] #247
+for aluno in alunos_list:
+    match = match_people(aluno, dengue_list)
+    if match:
+        without_dengue.append(aluno)
+
+
+import ipdb; ipdb.set_trace()
+
+# Old
 peoples_with_dengue = list(map(lambda x : x[1], dengue_list))
 alunos_without_dengue = list(filter(lambda x : x[1] not in peoples_with_dengue, alunos_list))
-
 header('Alunos que não tiveram dengue')
 print('\n{:^6}    {:>8}    {:>39}\n'.format('ID', 'NOME', 'DATA DE NASCIMENTO'))
 for aluno in alunos_without_dengue:

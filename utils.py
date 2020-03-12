@@ -3,6 +3,7 @@ def match_people(person, list_people):
 
     for people in list_people:
         match_score = 0
+        max_score = 0
 
         # perffect data
         if people[1].lower() == person[1].lower():
@@ -16,6 +17,8 @@ def match_people(person, list_people):
         elif people[5].lower() == person[5].lower():
             match_score += 10
 
+        max_score += 10
+
         # anomaly
 
         #### name ####
@@ -23,21 +26,27 @@ def match_people(person, list_people):
         person_names = person[1].split(' ')
 
         match_score += match_name(person_names, people_from_list_names)
+        max_score = 5 * len(person_names) * len(people_from_list_names)
 
         #### mom name ####
         mom_name_from_list_names = people[2].split(' ')
         mom_name = person[2].split(' ')
 
         match_score += match_name(mom_name, mom_name_from_list_names)
+        max_score = 5 * len(mom_name) * len(mom_name_from_list_names)
 
         #### father name ####
         dad_from_list_names = people[3].split(' ')
         dad_names = person[3].split(' ')
 
-        match_score += match_name(person_names, dad_from_list_names)
+        match_score += match_name(dad_names, dad_from_list_names)
+        max_score = 5 * len(dad_names) * len(dad_from_list_names)
+
+        import ipdb; ipdb.set_trace()
 
         # verify based in score if it is the same people
-        if match_score > 30:
+        percent_from_max = (max_score * 86) / 100
+        if match_score > percent_from_max:
             return people
 
     return None
@@ -66,7 +75,7 @@ def match_name(person_names, people_from_list_names):
             count = len(match_letters)
 
             percent = (len(letter_to_match) * 100) / len(letters_name)
-            if percent > 75:
+            if percent > 85:
                 match_score += 5
 
     return match_score
