@@ -1,6 +1,6 @@
 from constants import WORD_MATCH_SCORE
 from constants import ABREVIATION_MATCH_SCORE
-
+from constants import PERCENT_TO_MATCH
 
 def match_people(person, list_people):
     """
@@ -15,7 +15,7 @@ def match_people(person, list_people):
 
         # perffect data
         # check each name information, name, mother name, father name, genre, birth date
-        for i in range(1, 5):
+        for i in range(1, 4):
             if compare_people[i].lower() == person[i].lower():
                 match_score += len(person[1].split(' ')) * WORD_MATCH_SCORE
 
@@ -48,7 +48,7 @@ def match_people(person, list_people):
         max_score += match_result[1]
 
         # verify based in score if it is the same people
-        percent_from_max = (max_score * 40) / 100
+        percent_from_max = (max_score * PERCENT_TO_MATCH) / 100
 
         if match_score > percent_from_max:
             return compare_people
