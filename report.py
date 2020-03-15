@@ -151,5 +151,3 @@ for people in dengue_list:
        people not in peoples_with_dengue_no_school:
         people_with_dengue_no_school_and_no_use_bus.append(people)
 print(f'10) {len(people_with_dengue_no_school_and_no_use_bus)}')
-
-import ipdb; ipdb.set_trace()
