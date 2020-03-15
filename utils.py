@@ -51,7 +51,6 @@ def match_people(person, list_people):
         percent_from_max = (max_score * 50) / 100
         # import ipdb; ipdb.set_trace()
         if match_score > percent_from_max:
-            import ipdb; ipdb.set_trace()
             return compare_people
 
     return None
