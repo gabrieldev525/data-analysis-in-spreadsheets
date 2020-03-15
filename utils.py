@@ -48,8 +48,8 @@ def match_people(person, list_people):
         max_score += match_result[1]
 
         # verify based in score if it is the same people
-        percent_from_max = (max_score * 50) / 100
-        # import ipdb; ipdb.set_trace()
+        percent_from_max = (max_score * 40) / 100
+
         if match_score > percent_from_max:
             return compare_people
 
