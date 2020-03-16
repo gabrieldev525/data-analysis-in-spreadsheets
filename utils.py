@@ -14,7 +14,7 @@ def match_people(person, list_people):
         max_score = 0
 
         # perffect data
-        # check each name information, name, mother name, father name, genre, birth date
+        # check each name information, name, mother name, father name, genre
         for i in range(1, 4):
             if compare_people[i].lower() == person[i].lower():
                 match_score += len(person[1].split(' ')) * WORD_MATCH_SCORE

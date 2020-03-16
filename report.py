@@ -147,7 +147,7 @@ print(f'9) {len(peoples_with_dengue_no_school)}')
 """
 people_with_dengue_no_school_and_no_use_bus = []
 for people in dengue_list:
-    if people not in peoples_with_dengue_no_use_bus and \
-       people not in peoples_with_dengue_no_school:
+    if people in peoples_with_dengue_no_use_bus and \
+       people in peoples_with_dengue_no_school:
         people_with_dengue_no_school_and_no_use_bus.append(people)
 print(f'10) {len(people_with_dengue_no_school_and_no_use_bus)}')
