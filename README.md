@@ -8,7 +8,7 @@ That was a college work that the challange was to create a algorithm to handle p
 
 #### How to run?
 You can execute the following command: 
-  '''python report.py'''
+  ```python report.py```
   
 
 The doc-string are in portuguese, you can translate and understand.
