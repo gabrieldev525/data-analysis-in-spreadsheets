@@ -11,5 +11,5 @@ You can execute the following command:
   ```python report.py```
   
 
-The doc-string are in portuguese, you can translate and understand.
+The doc-string with questions are in portuguese, you can translate and understand.
 Thanks by attention :)
